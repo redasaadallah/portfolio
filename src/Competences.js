@@ -1,17 +1,10 @@
 import "./style/Competences.css"
-import React,{useState,useEffect,useNavigate} from "react";
-import python from "./certif/python.png"
+import React,{useState,useEffect} from "react";
 import home from "./img/home.png"
 import competance from "./img/competence.png"
 import manager from "./img/manager.png"
 import sartaficat from "./img/cartaficat.png"
-import phpsql from "./certif/phpsql.png"
-import pro from "./img/pro.png"
-import dentiste from "./img/dentiste.png"
-import danone from "./img/danone.png"
-import fst from "./img/fst.png"
 import {en,fr} from "./langue"
-import {motion} from "framer-motion"
 import {langage,framework,conception,bureatique,base,IDE,carte} from "./data";
 function Competences({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)

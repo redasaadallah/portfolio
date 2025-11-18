@@ -1,11 +1,9 @@
 import "./style/Projects.css"
 import React,{useState,useEffect,useRef} from "react";
-import python from "./certif/python.png"
 import home from "./img/home.png"
 import competance from "./img/competence.png"
 import manager from "./img/manager.png"
 import sartaficat from "./img/cartaficat.png"
-import phpsql from "./certif/phpsql.png"
 import pro from "./img/pro.png"
 import dentiste from "./img/dentiste.png"
 import danone from "./img/danone.png"
