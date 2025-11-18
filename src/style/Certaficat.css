@@ -1,0 +1,71 @@
+.cer{
+    height: auto;
+    width: 90vw;
+    margin: 5% auto;
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.cer div{
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     box-shadow: rgba(0, 0, 0, 1) 0px 0px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    margin-top: 1%;
+    transition: all 1s ease;
+    opacity: 0;
+    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        filter: blur(4px);
+
+}
+.cer div:hover{
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 35px;
+         transform: scale(1.01);
+
+}
+.cer div img{
+    width: 80%;
+    border-radius: 5px;
+}
+.cer div h1{
+    font-size: 1.5rem;
+    font-family: "Algerian";
+}
+.cer div a{
+    font-size: 0.8rem;
+    width: 70%;
+}
+/* Target phones (screen width 480px or smaller) */
+@media (max-width: 480px) {
+#menu{
+    display: none;
+}
+.btnmenu{
+    display: block;
+
+}
+.cer{
+    margin-top: 15%;
+    width: 90vw;
+}
+.cer div{
+    margin-top: 5%;
+}
+.menudown div:hover{
+    transform: translate(0,0);
+
+}
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

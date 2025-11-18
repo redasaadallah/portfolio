@@ -1,0 +1,165 @@
+.main{
+    margin: 5% auto;
+    width: 90vw;
+    height: auto;
+    text-align: center;
+    color: white;
+    font-family: Algerian;
+    font-size: 4rem;
+}
+.projects{
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap:10px;
+}
+.projects div:nth-child(odd){
+    width: 80%;
+    height: auto;
+    padding-left: 1%;
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1%;
+        scroll-margin-top: 80px; /* same as header height */
+        opacity: 0;
+    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        filter: blur(4px);
+
+}
+.projects div:nth-child(odd) img{
+    width: 7%;
+}
+.projects div:nth-child(odd) p{
+    font-size: 1.2rem;
+    font-family: Calibri;
+    font-weight: bolder;
+    width: 80%;
+    margin-left: 5px;
+
+}
+.projects div:nth-child(even){
+    width: 80%;
+    height: auto;
+    padding-left: 1%;
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    gap:1%;
+        scroll-margin-top: 80px; /* same as header height */
+        
+
+}
+.projects div:nth-child(even) div:first-of-type{
+        width: 50%;
+        height: 300px;
+}
+.projects div:nth-child(even) div:first-of-type p{
+        font-size: 1.2vw;
+        text-align: justify;
+        width: 100%;
+        font-family: "Calibri";
+}
+.projects div:nth-child(even) div:last-of-type{
+        width: 50%;
+        background-color: rgb(3, 135, 250);
+        height: 300px;
+        padding: 0;
+        border-radius: 5px;
+
+}
+.projects div:nth-child(even) div:last-of-type img{
+        width: 100%;
+        height: inherit;
+        border-radius: 5px;
+
+
+}
+.mobile{
+    width: 20%;
+    height: 500px;
+}
+/* ===================================================================== */
+@keyframes mylibrary {
+    0%{
+
+    }
+    8%{
+        
+    }
+    16%{
+        
+    }
+    24%{
+        
+    }
+    32%{
+        
+    }
+}
+/* ====================================================================== */
+@media (max-width: 480px) {
+.main{
+    margin-top: 20%;
+    font-size: 2rem;
+    height: auto;
+}
+.projects div:nth-child(odd){
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+    margin-top: 5%;
+    width: 90%;
+        scroll-margin-top: 80px; /* same as header height */
+
+}
+.projects div:nth-child(odd) img{
+    width: 30vw;
+}
+.projects div:nth-child(odd) p{
+    font-size: 4vw;
+    width: 90%;
+    text-align: justify;
+}
+.projects div:nth-child(even){
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+    margin-top: 2%;
+        width: 90%;
+        height: auto;
+    scroll-margin-top: 80px; /* same as header height */
+
+
+}
+.projects div:nth-child(even) div:first-of-type{
+    width: 100%;
+    height:auto;
+    box-shadow: none;
+    margin: 0;
+}
+.projects div:nth-child(even) div:first-of-type p{
+    font-size: 4vw;
+    width: 90%;
+    text-align: justify;
+}
+.projects div:nth-child(even) div:last-of-type{
+    width: 100%;
+    height: 200px;
+    background-color: green;
+}
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
