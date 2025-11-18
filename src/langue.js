@@ -15,7 +15,7 @@ export const en={
     pre3:"Feel free to explore my projects, skills, and experience!",
     cv:"Download cv",
     Edu:"Education",
-    In:"In progress",
+    In:"Present",
     Final:"Final year of the State Engineer program.",
     Fac:"Faculty of Science and Technology of Fez.",
     Major1:"Specialization in Intelligent, Communicating, and Mobile Systems (SICOM)",
