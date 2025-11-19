@@ -11,8 +11,8 @@ import manager from "./img/manager.png"
 import sartaficat from "./img/cartaficat.png"
 import competance from "./img/competence.png"
 import {en,fr} from "./langue"
-import cv1 from "./cv/CV SAADALLAH REDA EN.pdf"
-import cv2 from "./cv/CV SAADALLAH REDA FR.pdf"
+import cv1 from "./cv/CV SAADALLAH REDA FR.pdf"
+import cv2 from "./cv/CV SAADALLAH REDA EN.pdf"
 // "homepage": "https://redasaadallah.github.io/portfolio",
 function Home({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
