@@ -149,7 +149,7 @@ IDEA, XAMPP, Node.js.
     <div>
         <img src={danone}/>
         <p>{langue==="en"?en.e2:fr.e2}</p>
-        <button onClick={()=>{visible===2?setvisible(0):setvisible(2);setlen(10);setCount(0)}} className="download">{visible===2?langue==="en"?en.m:fr.m:langue==="en"?en.m:fr.m}</button>
+        <button onClick={()=>{visible===2?setvisible(0):setvisible(2);setlen(10);setCount(0)}} className="download">{visible===2?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </div>
     <div ref={div2Ref}  style={{display:visible===2?"flex":"none"}}>
             <div style={{width:screen?"100%":"80%"}}>
