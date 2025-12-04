@@ -85,6 +85,9 @@
     margin-top: 5%;
     padding-bottom: 5%;
 }
+#titsk{
+    color: black;
+}
 }
 @keyframes fade-in {
   100% {

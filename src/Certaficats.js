@@ -10,6 +10,9 @@ import exel from "./certif/exel.jpg"
 import ihssaa from "./certif/ihssaa.png"
 import javacphp from "./certif/javac++php.jpg"
 import Ai from "./certif/AI.png"
+import m1 from "./certif/1.png"
+import m2 from "./certif/2.png"
+import m3 from "./certif/3.png"
 import {en,fr} from "./langue"
 import pythonpdf from "./certifpdf/Introduction to python.pdf"
 import aipdf from "./certifpdf/introduction to AI.pdf"
@@ -17,6 +20,9 @@ import ihssaapdf from "./certifpdf/ihssaa.pdf"
 import javacphppdf from "./certifpdf/javac++php.pdf"
 import phpsqlpdf from "./certifpdf/PHP AND SQL.pdf"
 import exelpdf from "./certifpdf/exel.pdf"
+import c1 from './certifpdf/1.pdf'
+import c2 from './certifpdf/2.pdf'
+import c3 from './certifpdf/3.pdf'
 function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
 
@@ -80,28 +86,40 @@ function Certaficats({homes,experiences,competences,certificates}){
    {/* ======================================================================= */}
    <div className="cer">
     <div >
-        <img src={python}/>
+        <img className="imgg" src={python}/>
         <a href={pythonpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
      <div >
-        <img src={phpsql}/>
+        <img className="imgg" src={phpsql}/>
         <a href={phpsqlpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
      <div >
-        <img src={exel}/>
+        <img className="imgg" src={exel}/>
         <a href={exelpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
      <div >
-        <img src={javacphp}/>
+        <img className="imgg" src={javacphp}/>
         <a href={javacphppdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
     <div >
-        <img src={ihssaa}/>
+        <img className="imgg" src={ihssaa}/>
         <a href={ihssaapdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
     <div >
-        <img src={Ai}/>
+        <img className="imgg" src={Ai}/>
         <a href={aipdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m1}/>
+        <a href={c1} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m2}/>
+        <a href={c2} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m3}/>
+        <a href={c3} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
    </div>
 

@@ -84,7 +84,7 @@ function Competences({homes,experiences,competences,certificates}){
    {/* ======================================================================= */}
    <div className="competences">
     <div className="competence">
-    <h1>{langue==="en"?en.s1:fr.s1}</h1>
+    <h1 id="titsk">{langue==="en"?en.s1:fr.s1}</h1>
     <div 
     
     className="comp">
@@ -95,7 +95,7 @@ function Competences({homes,experiences,competences,certificates}){
         </div>))}
     </div></div>
     <div className="competence">
-    <h1>{langue==="en"?en.s2:fr.s2}</h1>
+    <h1 id="titsk">{langue==="en"?en.s2:fr.s2}</h1>
     <div className="comp">
         {framework.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -104,7 +104,7 @@ function Competences({homes,experiences,competences,certificates}){
         </div>))}
     </div></div>
     <div className="competence">
-    <h1>{langue==="en"?en.s3:fr.s3}</h1>
+    <h1 id="titsk">{langue==="en"?en.s3:fr.s3}</h1>
     <div className="comp">
         {IDE.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }} >
@@ -113,7 +113,7 @@ function Competences({homes,experiences,competences,certificates}){
         </div>))}
     </div></div>
     <div className="competence">
-    <h1>{langue==="en"?en.s4:fr.s4}</h1>
+    <h1 id="titsk">{langue==="en"?en.s4:fr.s4}</h1>
     <div className="comp">
         {conception.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -122,7 +122,7 @@ function Competences({homes,experiences,competences,certificates}){
         </div>))}
     </div></div>
     <div className="competence">
-    <h1>{langue==="en"?en.s5:fr.s5}</h1>
+    <h1 id="titsk">{langue==="en"?en.s5:fr.s5}</h1>
     <div className="comp">
         {bureatique.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -131,7 +131,7 @@ function Competences({homes,experiences,competences,certificates}){
         </div>))}
     </div></div>
     <div className="competence">
-    <h1>{langue==="en"?en.s6:fr.s6}</h1>
+    <h1 id="titsk">{langue==="en"?en.s6:fr.s6}</h1>
     <div className="comp">
         {base.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -141,7 +141,7 @@ function Competences({homes,experiences,competences,certificates}){
     </div></div>
     
     <div className="competence">
-    <h1>{langue==="en"?en.s7:fr.s7}</h1>
+    <h1 id="titsk">{langue==="en"?en.s7:fr.s7}</h1>
     <div className="comp">
         {carte.map((emp,index)=>(
         <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
