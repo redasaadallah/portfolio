@@ -13,6 +13,9 @@ import Ai from "./certif/AI.png"
 import m1 from "./certif/1.png"
 import m2 from "./certif/2.png"
 import m3 from "./certif/3.png"
+import m4 from "./certif/4.png"
+import m5 from "./certif/5.png"
+import m6 from "./certif/6.png"
 import {en,fr} from "./langue"
 import pythonpdf from "./certifpdf/Introduction to python.pdf"
 import aipdf from "./certifpdf/introduction to AI.pdf"
@@ -23,6 +26,9 @@ import exelpdf from "./certifpdf/exel.pdf"
 import c1 from './certifpdf/1.pdf'
 import c2 from './certifpdf/2.pdf'
 import c3 from './certifpdf/3.pdf'
+import c4 from './certifpdf/4.pdf'
+import c5 from './certifpdf/5.pdf'
+import c6 from './certifpdf/6.pdf'
 function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
 
@@ -120,6 +126,18 @@ function Certaficats({homes,experiences,competences,certificates}){
     <div >
         <img className="imgg" src={m3}/>
         <a href={c3} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m4}/>
+        <a href={c4} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m5}/>
+        <a href={c5} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m6}/>
+        <a href={c6} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
    </div>
 
