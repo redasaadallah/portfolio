@@ -16,6 +16,7 @@ import m3 from "./certif/3.png"
 import m4 from "./certif/4.png"
 import m5 from "./certif/5.png"
 import m6 from "./certif/6.png"
+import m7 from "./certif/7.png"
 import {en,fr} from "./langue"
 import pythonpdf from "./certifpdf/Introduction to python.pdf"
 import aipdf from "./certifpdf/introduction to AI.pdf"
@@ -29,6 +30,7 @@ import c3 from './certifpdf/3.pdf'
 import c4 from './certifpdf/4.pdf'
 import c5 from './certifpdf/5.pdf'
 import c6 from './certifpdf/6.pdf'
+import c7 from './certifpdf/7.pdf'
 function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
 
@@ -138,6 +140,10 @@ function Certaficats({homes,experiences,competences,certificates}){
     <div >
         <img className="imgg" src={m6}/>
         <a href={c6} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+    </div>
+    <div >
+        <img className="imgg" src={m7}/>
+        <a href={c7} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
     </div>
    </div>
 
