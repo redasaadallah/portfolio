@@ -31,11 +31,14 @@ import c4 from './certifpdf/4.pdf'
 import c5 from './certifpdf/5.pdf'
 import c6 from './certifpdf/6.pdf'
 import c7 from './certifpdf/7.pdf'
+import { motion } from "framer-motion";
+
 function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
+       const [show1,setshow1]=useState(false)
 
     const [langue,setlangue]=useState("en")
-                const [showl,setshowl]=useState(false)
+        const [showl,setshowl]=useState(false)
          // Save to localStorage when the name changes
      const [mounted, setMounted] = useState(false);
                  useEffect(() => {
@@ -64,14 +67,15 @@ function Certaficats({homes,experiences,competences,certificates}){
             <li onClick={experiences} class="link"><button class="inlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
             <li onClick={certificates} class="link"><button style={{color:"aqua", borderBottom:"2px solid"}} class="inlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
          </ul>
-         <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
-         <div style={{display:showl?'flex':'none'}} id="menu-langue">
-                    <button onClick={()=>{setshowl(false)}} style={{width:"21%",padding:"0",borderRadius:"50%",height:"22%",textAlign:"center"}} className="download"><i style={{fontSize:"1.5vw",margin:"0",textAlign:"center"}} class="bi bi-x"></i></button>
-    
-            <button onClick={()=>{setlangue("en");setshowl(false)}} style={{width:"80%",padding:"0",height:"31%",animationDuration:"0s"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-            <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%",animationDuration:"0s"}} className="download">{langue==="en"?"French":"Français"}</button>
-    
-         </div>
+          <div style={{position:"relative"}}>
+     <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
+     <div style={{display:showl?'flex':'none'}} id="menu-langue">
+
+        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
+
+     </div>
+     </div>
          <button onClick={()=>{setshow(true);}} className="btnmenu"><i class="bi bi-list"></i></button>
         </div>
          
@@ -93,58 +97,123 @@ function Certaficats({homes,experiences,competences,certificates}){
     
    {/* ======================================================================= */}
    <div className="cer">
-    <div >
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={python}/>
         <a href={pythonpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-     <div >
+    </motion.div>
+     <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.1,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+     >
         <img className="imgg" src={phpsql}/>
         <a href={phpsqlpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-     <div >
+    </motion.div>
+     <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.2,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+     >
         <img className="imgg" src={exel}/>
         <a href={exelpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-     <div >
+    </motion.div>
+     <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.3,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+     >
         <img className="imgg" src={javacphp}/>
         <a href={javacphppdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.4,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={ihssaa}/>
         <a href={ihssaapdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.5,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={Ai}/>
         <a href={aipdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m1}/>
         <a href={c1} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.7,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m2}/>
         <a href={c2} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.8,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m3}/>
         <a href={c3} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.9,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m4}/>
         <a href={c4} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m5}/>
         <a href={c5} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1.1,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m6}/>
         <a href={c6} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
-    <div >
+    </motion.div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1.2,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img className="imgg" src={m7}/>
         <a href={c7} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
-    </div>
+    </motion.div>
    </div>
 
 {/* ======================================================================================== */}

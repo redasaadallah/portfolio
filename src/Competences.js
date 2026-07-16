@@ -5,7 +5,10 @@ import competance from "./img/competence.png"
 import manager from "./img/manager.png"
 import sartaficat from "./img/cartaficat.png"
 import {en,fr} from "./langue"
-import {langage,framework,conception,bureatique,base,IDE,carte} from "./data";
+import SkillCard from "./SkillCard";
+import {langage,framework,conception,bureatique,base,IDE,carte,ops} from "./data";
+import { motion } from "framer-motion";
+
 function Competences({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
        const [show1,setshow1]=useState(false)
@@ -42,6 +45,13 @@ function Competences({homes,experiences,competences,certificates}){
             }
         }
     }  
+    function getRandomPrettyColor() {
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = 65 + Math.floor(Math.random() * 16); // 65% à 80%
+  const lightness = 55 + Math.floor(Math.random() * 16);  // 55% à 70%
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
     return(<>
     {/* ============================================================= */}
         <div class="header">
@@ -53,14 +63,15 @@ function Competences({homes,experiences,competences,certificates}){
             <li onClick={experiences} class="link"><button class="inlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
             <li onClick={certificates} class="link"><button class="inlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
          </ul>
-         <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
-         <div style={{display:showl?'flex':'none'}} id="menu-langue">
-                    <button onClick={()=>{setshowl(false)}} style={{width:"21%",padding:"0",borderRadius:"50%",height:"22%",textAlign:"center"}} className="download"><i style={{fontSize:"1.5vw",margin:"0",textAlign:"center"}} class="bi bi-x"></i></button>
-    
-            <button onClick={()=>{setlangue("en");setshowl(false)}} style={{width:"80%",padding:"0",height:"31%",animationDuration:"0s"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-            <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%",animationDuration:"0s"}} className="download">{langue==="en"?"French":"Français"}</button>
-    
-         </div>
+         <div style={{position:"relative"}}>
+     <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
+     <div style={{display:showl?'flex':'none'}} id="menu-langue">
+
+        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
+
+     </div>
+     </div>
          <button onClick={()=>{setshow(true);}} className="btnmenu"><i class="bi bi-list"></i></button>
         </div>
          
@@ -82,74 +93,170 @@ function Competences({homes,experiences,competences,certificates}){
    
       
    {/* ======================================================================= */}
-   <div className="competences">
-    <div className="competence">
+    <div style={{marginTop:"150px"}} className="competence">
     <h1 id="titsk">{langue==="en"?en.s1:fr.s1}</h1>
     <div 
-    
-    className="comp">
+    id="comp">
         {langage.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
-    </div></div>
-    <div className="competence">
+        <SkillCard
+            key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
+    </div>
+    </div>
+    {/* ============================================= */}
+    <div style={{marginTop:"50px"}} className="competence">
     <h1 id="titsk">{langue==="en"?en.s2:fr.s2}</h1>
-    <div className="comp">
+    <div id="comp">
         {framework.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
+             <SkillCard
+             key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+       ))}
     </div></div>
-    <div className="competence">
-    <h1 id="titsk">{langue==="en"?en.s3:fr.s3}</h1>
-    <div className="comp">
-        {IDE.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }} >
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
-    </div></div>
-    <div className="competence">
-    <h1 id="titsk">{langue==="en"?en.s4:fr.s4}</h1>
-    <div className="comp">
-        {conception.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
-    </div></div>
-    <div className="competence">
-    <h1 id="titsk">{langue==="en"?en.s5:fr.s5}</h1>
-    <div className="comp">
-        {bureatique.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
-    </div></div>
-    <div className="competence">
+    {/* ================================ */}
+    <div style={{marginTop:"50px"}} className="competence">
     <h1 id="titsk">{langue==="en"?en.s6:fr.s6}</h1>
-    <div className="comp">
+    <div id="comp">
         {base.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
+              <SkillCard
+              key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
+    </div></div>
+    {/* ================================ */}
+    <div style={{marginTop:"50px"}} className="competence">
+    <h1 id="titsk">DevOps & Cloud</h1>
+    <div id="comp">
+        {ops.map((emp,index)=>(
+              <SkillCard
+              key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
+    </div></div>
+    {/* ========================================= */}
+    <div style={{marginTop:"50px"}} className="competence">
+    <h1 id="titsk">{langue==="en"?en.s3:fr.s3}</h1>
+    <div id="comp">
+        {IDE.map((emp,index)=>(
+             <SkillCard
+             key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
+    </div></div>
+    {/* =============================== */}
+    <div style={{marginTop:"50px"}} className="competence">
+    <h1 id="titsk">{langue==="en"?en.s4:fr.s4}</h1>
+    <div id="comp">
+        {conception.map((emp,index)=>(
+              <SkillCard
+              key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
+    </div></div>
+    {/* ================================ */}
+    <div style={{marginTop:"50px"}} className="competence">
+    <h1 id="titsk">{langue==="en"?en.s5:fr.s5}</h1>
+    <div id="comp">
+        {bureatique.map((emp,index)=>(
+              <SkillCard
+              key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        ))}
     </div></div>
     
-    <div className="competence">
+    {/* ============================================= */}
+    <div style={{marginTop:"50px"}} className="competence">
     <h1 id="titsk">{langue==="en"?en.s7:fr.s7}</h1>
-    <div className="comp">
+    <div id="comp">
         {carte.map((emp,index)=>(
-        <div key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-            <img src={emp.image}/>
-            <p>{emp.nom}</p>
-        </div>))}
+              <SkillCard
+              key={index}
+            time={index*0.3}
+            level={langue==="en"?en.s8:fr.s8}
+            logo={emp.image}
+
+            name={emp.nom}
+
+            percentage={emp.per}
+
+            color={getRandomPrettyColor()}
+
+            />
+        
+        ))}
     </div></div>
-   </div>
+   
    {/* ======================================================================= */}
    <div className="menudown">
 <div onClick={homes}>
@@ -171,6 +278,7 @@ function Competences({homes,experiences,competences,certificates}){
 </div>
 
 {/* ======================================================================================== */}
+
 
 {/* ======================================================================================= */}
 

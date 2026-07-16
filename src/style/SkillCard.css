@@ -1,0 +1,150 @@
+.skill-card {
+
+    width:260px;
+    height:330px;
+
+    background:white;
+
+    border-radius:5px;
+
+    padding:30px 25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0px 5px rgba(0,0,0,0.5);
+
+    transition:0.3s ease;
+
+}
+
+
+.skill-card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 35px rgba(108,76,232,0.2);
+
+}
+
+
+
+/* Logo */
+
+.skill-logo {
+
+    width:95px;
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f8f8ff;
+
+}
+
+
+.skill-logo img {
+
+    width:65px;
+    height:65px;
+
+    object-fit:contain;
+
+}
+
+
+
+/* Technology name */
+
+.skill-card h3 {
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+
+
+/* Small line */
+
+.skill-line {
+
+    width:55px;
+
+    height:3px;
+
+    margin:15px auto 45px;
+
+    border-radius:10px;
+
+}
+
+
+
+/* Strength */
+
+.skill-info {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#64748B;
+
+    margin-bottom:15px;
+
+}
+
+
+.skill-info strong {
+
+    font-size:20px;
+
+}
+
+
+
+/* Progress */
+
+.progress-container {
+
+    width:100%;
+
+    height:10px;
+
+    background:#e9edf3;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.progress-bar {
+
+    height:100%;
+
+    border-radius:20px;
+
+}

@@ -9,7 +9,7 @@ import html from "./imgskills/html.png";
 import css from "./imgskills/css.png";
 import vhdl from "./imgskills/vhdl.png";
 import r from "./imgskills/ro.png";
-import Roby from "./imgskills/robi.png"
+import typescript from "./img/typescript.png"
 import laravel from "./imgskills/laravel.png"
 import react from "./imgskills/reactreact.png"
 import spring from "./imgskills/springbit.png"
@@ -48,224 +48,245 @@ import mat from "./imgskills/m.png"
 import ras4 from "./imgskills/ras4.png"
 import ard from "./imgskills/ard.png"
 import esp from "./imgskills/esp32.png"
+import nextjs from "./imgskills/nextjs.png"
+import fastapi from "./imgskills/fastapi.png"
+import docker from "./imgskills/docker.png"
+import actions from "./imgskills/actions.png"
+import nginx from "./imgskills/nginx.png"
 export const langage = [
   {
     image: python,
-    nom: "Python"
+    nom: "Python",
+    per:75
   },
    {
     image: java,
-    nom: "Java"
+    nom: "Java",
+    per:80
   },
    {
     image: javascript,
-    nom: "Javascript"
+    nom: "Javascript",
+    per:82
+  },
+  {
+    image: typescript,
+    nom: "Typescript",
+    per:70
   },
    {
     image: cpp,
-    nom: "C++"
+    nom: "C++",
+    per:50
   },
    {
     image: c,
-    nom: "C"
+    nom: "C",
+    per:50
   },
    {
     image: mat,
-    nom: "Matlab"
+    nom: "Matlab",
+    per:50
   },
    {
     image: php,
-    nom: "PHP"
-  },
-   {
-    image: Roby,
-    nom: "Ruby"
+    nom: "PHP",
+    per:40
   },
    
-   {
-    image: html,
-    nom: "HTML"
-  },
-   {
-    image: css,
-    nom: "CSS"
-  },
-  {
-    image: vhdl,
-    nom: "VHDL"
-  },{
-    image: r,
-    nom: "R"
-  },
+   
+  
 ];
 export const framework=[
 {
-  image:laravel,
-  nom:"Laravel"
+  image:nextjs,
+  nom:"Next.js",
+  per:60
 },
 {
   image:react,
-  nom:"React"
+  nom:"React.js",
+  per:70
 },
 {
   image:spring,
-  nom:"Spring Boot"
+  nom:"Spring Boot",
+  per:75
 },
 {
-  image:bootstrap,
-  nom:"Bootstrap"
+  image:fastapi,
+  nom:"FastAPI",
+  per:65
 },
-{
-  image:node,
-  nom:"Node.js"
-},
-{
-  image:express,
-  nom:"Express.js"
-},
+
 {
   image:kivy,
-  nom:"KivyMD"
+  nom:"KivyMD",
+  per:80
 },
 {
   image:pandas,
-  nom:"Pandas"
+  nom:"Pandas",
+  per:60
 },
 {
   image:pytorch,
-  nom:"PyThorch"
+  nom:"PyThorch",
+  per:55
 },
 {
   image:tenser,
-  nom:"TensorFlow"
+  nom:"TensorFlow",
+  per:65
 },
 {
   image:open,
-  nom:"OpenCV"
+  nom:"OpenCV",
+  per:70
 },
 
 ]
 export const conception=[
   {
     image:micpro,
-    nom:"MS Project"
+    nom:"MS Project",
+    per:68
   },
    {
     image:uml,
-    nom:"StarUML."
+    nom:"StarUML",
+    per:65
   },
 ]
 export const bureatique=[
   {
     image:exel,
-    nom:"Excel"
+    nom:"Excel",
+    per:70
   },
   {
     image:word,
-    nom:"Word"
+    nom:"Word",
+    per:80
   },
   {
     image:power,
-    nom:"PowerPoint"
+    nom:"PowerPoint",
+    per:80
   },
 ]
 export const base=[
   {
     image:sql,
-    nom:"SQL"
+    nom:"SQL",
+    per:80
   },
   {
     image:mongo,
-    nom:"MongoDB"
+    nom:"MongoDB",
+    per:70
   },
   {
     image:porst,
-    nom:"PostgreSQLL"
+    nom:"PostgreSQL",
+    per:80
   },
   {
     image:oracle,
-    nom:"Oracle"
+    nom:"Oracle",
+    per:60
   },
   {
     image:fire,
-    nom:"FireBase"
+    nom:"FireBase",
+    per:65
   },
 ]
 export const IDE=[
   {
     image:vscode,
-    nom:"VS Code"
+    nom:"VS Code",
+    per:80
   },
   {
     image:intelijj,
-    nom:"Intellij"
+    nom:"Intellij",
+    per:80
   },
   {
     image:and,
-    nom:"Android Studio"
+    nom:"Android Studio",
+    per:50
   },
   {
     image:charm,
-    nom:"PyCharm"
+    nom:"PyCharm",
+    per:60
   },
   {
     image:jupy,
-    nom:"Jupyter Notebook"
+    nom:"Jupyter Notebook",
+    per:85
   },
-  {
-    image:ana,
-    nom:"Anaconda"
-  },
+  
   {
     image:cisco,
-    nom:"Cisco Packet Tracer"
+    nom:"Cisco Packet Tracer",
+    per:65
   },
   {
     image:fig,
-    nom:"Figma"
+    nom:"Figma",
+    per:75
   },
-  {
-    image:xam,
-    nom:"XAMPP"
-  },
+  
   {
     image:post,
-    nom:"Postman"
+    nom:"Postman",
+    per:72
   },
-  {
-    image:lab,
-    nom:"LabVIEW"
-  },
-  {
-    image:altium,
-    nom:"Altium Designer"
-  },
-  {
-    image:proteus,
-    nom:"Proteus"
-  },
-  {
-    image:ansys,
-    nom:"Ansys"
-  },
+  
   {
     image:mat,
-    nom:"Matlab"
+    nom:"Matlab",
+    per:60
   },
 ]
 export const carte=[
   {
     image:ras4,
-    nom:"Raspberry Pi"
+    nom:"Raspberry Pi",
+    per:80
   },
    {
     image:ard,
-    nom:"Arduino"
+    nom:"Arduino",
+    per:70
   },
    
    {
     image:esp,
-    nom:"ESP32"
+    nom:"ESP32",
+    per:55
+  },
+]
+export const ops=[
+  {
+    image:docker,
+    nom:"Docker",
+    per:70
+  },
+   {
+    image:actions,
+    nom:"GitHub Actions (CI/CD)",
+    per:60
+  },
+   
+   {
+    image:nginx,
+    nom:"Nginx",
+    per:65
   },
 ]
 

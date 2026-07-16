@@ -9,9 +9,11 @@ import dentiste from "./img/dentiste.png"
 import danone from "./img/danone.png"
 import fst from "./img/fst.png"
 import {en,fr} from "./langue"
+import { motion } from "framer-motion";
 
 import {mylibrary,dannone,cabinet,paneau,mnist,format,traitement,hotel,sms} from "./projectdata"
 function Experiences({homes,experiences,competences,certificates}){
+       const [show1,setshow1]=useState(false)
 
     const [show,setshow]=useState(false)
         const [langue,setlangue]=useState("en")
@@ -61,6 +63,7 @@ function Experiences({homes,experiences,competences,certificates}){
   const div8Ref = useRef(null);
 
     const div9Ref = useRef(null);
+    const div10Ref = useRef(null);
 
   useEffect(() => {
     if (visible===1 && div1Ref.current) {
@@ -91,6 +94,9 @@ function Experiences({homes,experiences,competences,certificates}){
     if (visible===9 && div9Ref.current) {
       div9Ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    if (visible===10 && div10Ref.current) {
+      div10Ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }, [visible]);
     return(<>
      <div class="header">
@@ -102,14 +108,15 @@ function Experiences({homes,experiences,competences,certificates}){
             <li onClick={experiences} class="link"><button style={{color:"aqua", borderBottom:"2px solid"}} class="inlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
             <li onClick={certificates} class="link"><button class="inlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
          </ul>
-         <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
-         <div style={{display:showl?'flex':'none'}} id="menu-langue">
-                    <button onClick={()=>{setshowl(false)}} style={{width:"21%",padding:"0",borderRadius:"50%",height:"22%",textAlign:"center"}} className="download"><i style={{fontSize:"1.5vw",margin:"0",textAlign:"center"}} class="bi bi-x"></i></button>
-    
-            <button onClick={()=>{setlangue("en");setshowl(false)}} style={{width:"80%",padding:"0",height:"31%",animationDuration:"0s"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-            <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%",animationDuration:"0s"}} className="download">{langue==="en"?"French":"Français"}</button>
-    
-         </div>
+         <div style={{position:"relative"}}>
+     <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
+     <div style={{display:showl?'flex':'none'}} id="menu-langue">
+
+        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
+
+     </div>
+     </div>
          <button onClick={()=>{setshow(true);}} className="btnmenu"><i class="bi bi-list"></i></button>
         </div>
          
@@ -130,13 +137,44 @@ function Experiences({homes,experiences,competences,certificates}){
             <div onClick={()=>setshow(false)} className={show===false?"coverdiv":"coverdiv1"}></div></div>}
   
    {/* ======================================================================= */}
-   <h1 className="main">{langue==="en"?en.te1:fr.te1}</h1>
+   <motion.h1 
+   initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+   style={{marginTop:"150px",fontSize:"clamp(2.5rem,4vw,6rem)"}} className="main">{langue==="en"?en.te1:fr.te1}</motion.h1>
    <div className="projects">
-    <div>
+    {/* +++++++++++++++++++++++++++++++++ */}
+     <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.3,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+     >
         <img src={fst}/>
         <p>{langue==="en"?en.e1:fr.e1}</p>
-        <button onClick={()=>{visible===1?setvisible(0):setvisible(1);setlen(11);setCount(0)}} className="download">{visible===1?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
+        <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===10?setvisible(0):setvisible(10);setlen(11);setCount(0)}} className="download">{visible===10?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
+    </motion.div>
+    <div ref={div10Ref} style={{display:visible===10?"flex":"none"}}>
+        <div>
+            <p>
+                {langue==="en"?en.ed1:fr.ed1}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> React.js, Java (Spring Boot), Postman, Figma, MySQL, VS Code, IntelliJ 
+IDEA, XAMPP, Node.js. 
+            </p>
+        </div>
+        <div><img src={mylibrary[count]}/></div>
     </div>
+    {/* ++++++++++++++++++++++++++++++++ */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
+        <img src={fst}/>
+        <p>{langue==="en"?en.e1:fr.e1}</p>
+        <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===1?setvisible(0):setvisible(1);setlen(11);setCount(0)}} className="download">{visible===1?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
+    </motion.div>
     <div ref={div1Ref} style={{display:visible===1?"flex":"none"}}>
         <div>
             <p>
@@ -146,11 +184,17 @@ IDEA, XAMPP, Node.js.
         </div>
         <div><img src={mylibrary[count]}/></div>
     </div>
-    <div>
+    {/* ++++++++++++++++++++++++++++++++ */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.9,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={danone}/>
         <p>{langue==="en"?en.e2:fr.e2}</p>
-        <button onClick={()=>{visible===2?setvisible(0):setvisible(2);setlen(10);setCount(0)}} className="download">{visible===2?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+        <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===2?setvisible(0):setvisible(2);setlen(10);setCount(0)}} className="download">{visible===2?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
+    </motion.div>
     <div ref={div2Ref}  style={{display:visible===2?"flex":"none"}}>
             <div style={{width:screen?"100%":"80%"}}>
                  <p>
@@ -160,11 +204,17 @@ IntelliJ IDEA, XAMPP, Node.js.
             </div>
             <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={dannone[count]}/></div>
     </div>
-    <div>
+    {/* +++++++++++++++++++++ */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={dentiste}/>
         <p>{langue==="en"?en.e3:fr.e3}</p>
-        <button onClick={()=>{visible===3?setvisible(0):setvisible(3);setlen(16);setCount(0)}} className="download">{visible===3?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+        <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===3?setvisible(0):setvisible(3);setlen(16);setCount(0)}} className="download">{visible===3?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
+    </motion.div>
     <div ref={div3Ref}  style={{display:visible===3?"flex":"none"}}>
         <div style={{width:screen?"100%":"80%"}}>
                  <p>
@@ -179,13 +229,24 @@ MongoDB Compass.
     
     </div>
    {/* ======================================================================= */}
-   <h1 className="main">{langue==="en"?en.te2:fr.te2}</h1>
+   <motion.h1 
+   initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+   className="main">{langue==="en"?en.te2:fr.te2}</motion.h1>
    <div className="projects">
-    <div>
+    {/* ===================== */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.2,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
         <p>{langue==="en"?en.e4:fr.e4}</p>
         <button onClick={()=>{visible===4?setvisible(0):setvisible(4);setlen(14);setCount(0)}} className="download">{visible===4?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div ref={div4Ref} style={{display:visible===4?"flex":"none"}}>
         <div className="mobile" style={{width:screen?"100%":"80%"}}>
                  <p>
@@ -196,11 +257,17 @@ MongoDB Compass.
             </div>
         <div style={{width:screen?"80%":"20%",height:"500px"}}><img src={paneau[count]}/></div>
     </div>
-    <div>
+    {/* ============================= */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.4,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
         <p>{langue==="en"?en.e5:fr.e5}  </p>
         <button onClick={()=>{visible===5?setvisible(0):setvisible(5);setlen(7);setCount(0)}} className="download">{visible===5?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div ref={div5Ref} style={{display:visible===5?"flex":"none"}}>
        <div>
             <p>
@@ -211,11 +278,17 @@ MongoDB Compass.
         </div>
         <div><img src={mnist[count]}/></div> 
     </div>
-    <div>
+    {/* ========================== */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
         <p>{langue==="en"?en.e6:fr.e6}  </p>
         <button onClick={()=>{visible===6?setvisible(0):setvisible(6);setlen(5);setCount(0)}} className="download">{visible===6?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div ref={div6Ref} style={{display:visible===6?"flex":"none"}}>
         <div style={{width:screen?"100%":"80%"}}>
                  <p>
@@ -227,11 +300,17 @@ MongoDB Compass.
             </div>
         <div style={{width:screen?"":"30%",height:"300px"}}><img src={format[count]}/></div>
     </div>
-    <div>
+    {/* ================================ */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0.8,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
         <p>{langue==="en"?en.e7:fr.e7}   </p>
         <button onClick={()=>{visible===7?setvisible(0):setvisible(7);setlen(5);setCount(0)}} className="download">{visible===7?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div ref={div7Ref} style={{display:visible===7?"flex":"none"}}>
         <div>
             <p>
@@ -240,11 +319,17 @@ MongoDB Compass.
         </div>
         <div><img src={traitement[count]}/></div> 
     </div>
-    <div>
+    {/* ================================== */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
-        <p>{langue==="en"?en.e8:fr.e8}   </p>
+        <p>{langue==="en"?en.e8:fr.e8}  b </p>
         <button onClick={()=>{visible===8?setvisible(0):setvisible(8);setlen(9);setCount(0)}} className="download">{visible===8?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div ref={div8Ref} style={{display:visible===8?"flex":"none"}}>
         <div>
             <p>
@@ -255,11 +340,17 @@ MongoDB Compass.
         </div>
         <div><img src={hotel[count]}/></div> 
     </div>
-    <div>
+    {/* =========================== */}
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:1.2,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+    >
         <img src={pro}/>
         <p>{langue==="en"?en.e9:fr.e9}</p>
         <button onClick={()=>{visible===9?setvisible(0):setvisible(9);setlen(2);setCount(0)}} className="download">{visible===9?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
-    </div>
+    </motion.div>
     <div  ref={div9Ref} style={{display:visible===9?"flex":"none"}}>
          <div style={{width:screen?"100%":"80%"}}>
                  <p>
@@ -268,6 +359,7 @@ MongoDB Compass.
             </div>
         <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={sms[count]}/></div>
     </div>
+    {/* ================================ */}
    </div>
 
 {/* ======================================================================================== */}

@@ -4,7 +4,7 @@ import email from "./img/gmail.png"
 import git from "./img/github.png"
 import linkedin from "./img/linkedin.png"
 import whatsapp from "./img/whatsapp.png"
-import redasaad from "./img/redasaad.jpg"
+import code from "./img/code.png"
 import education from "./img/education.png"
 import home from "./img/home.png"
 import manager from "./img/manager.png"
@@ -13,6 +13,8 @@ import competance from "./img/competence.png"
 import {en,fr} from "./langue"
 import cv1 from "./cv/CV SAADALLAH REDA FR.pdf"
 import cv2 from "./cv/CV SAADALLAH REDA EN.pdf"
+import { motion } from "framer-motion";
+
 // "homepage": "https://redasaadallah.github.io/portfolio",
 function Home({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
@@ -47,13 +49,14 @@ function Home({homes,experiences,competences,certificates}){
         <li onClick={experiences} class="link"><button class="inlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
         <li onClick={certificates} class="link"><button class="inlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
      </ul>
+     <div style={{position:"relative"}}>
      <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
      <div style={{display:showl?'flex':'none'}} id="menu-langue">
-                <button onClick={()=>{setshowl(false)}} style={{width:"21%",padding:"0",borderRadius:"50%",height:"22%",textAlign:"center",animationDuration:"0s"}} className="download"><i style={{fontSize:"1.5vw",margin:"0",textAlign:"center"}} class="bi bi-x"></i></button>
 
-        <button onClick={()=>{setlangue("en");setshowl(false);}} style={{width:"80%",padding:"0",height:"31%",animationDuration:"0s"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-        <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%",animationDuration:"0s"}} className="download">{langue==="en"?"French":"Français"}</button>
+        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
 
+     </div>
      </div>
      <button onClick={()=>{setshow(true);}} className="btnmenu"><i class="bi bi-list"></i></button>
     </div>
@@ -63,7 +66,6 @@ function Home({homes,experiences,competences,certificates}){
         <div className="conmenu">
             <ul id="conmenu">
         <li onClick={homes} style={{backgroundColor:"#c97a05",borderRadius:"5px",width:"70%",height:"7%",textAlign:"center"}} class="conlink"><button style={{color:"white"}}  class="coninlink" href="www.facebook.com"><i style={{color:"white"}} class="icon fa-solid fa-house"></i> {langue==="en"?en.home:fr.home}</button></li> 
-        {/* <li class="conlink"><button class="coninlink" href="img/1.png"><i class="fa-solid fa-list-check"></i>Projects</button></li> */}
         <li onClick={competences} class="conlink"><button class="coninlink" href="#"><i class="fa-regular fa-user"></i>{langue==="en"?en.skills:fr.skills}</button></li>
         <li onClick={experiences} class="conlink"><button class="coninlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
         <li onClick={certificates} class="conlink"><button class="coninlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
@@ -74,44 +76,75 @@ function Home({homes,experiences,competences,certificates}){
         </div>
         <div onClick={()=>setshow(false)} className={show===false?"coverdiv":"coverdiv1"}></div></div>}
 {/* ============================================================================================================================ */}
-        <div className="body">
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay:0,ease: "linear" }}
+        viewport={{ once: true, amount: 0 }}
+        className="body">
         <div class="img1">
             <h1 class="typing"><span>{langue==="en"?en.b:fr.b} </span>&nbsp;<span> {langue==="en"?en.b1:fr.b1} </span> <span> Reda</span> <span> SAADALLAH.</span></h1>
             <h3 class="hix"><span class="job">{langue==="en"?en.b2:fr.b2}  &nbsp;<i class="fa-regular fa-heart"></i> {langue==="en"?en.b3:fr.b3}</span></h3>
             <h3 class="hi">{langue==="en"?en.pre1:fr.pre1}<br/><br/> {langue==="en"?en.pre2:fr.pre2}
  <br/><br/>{langue==="en"?en.pre3:fr.pre3}
 </h3>
-<div className="contact">
+<div style={{display:"flex",gap:"5px",marginTop:"10px"}} className="contact">
 <a  href="https://www.linkedin.com/in/reda-saadallah-795776246" ><img class="apps" width="40px"  src={linkedin} alt=""/></a>
 <a  href="https://github.com/redasaadallah" ><img class="apps" width="40px"  src={git} alt=""/></a>
 <a  href="mailto:redasaadallah77@gmail.com"><img class="apps" width="40px"  src={email} alt=""/></a>
 <a  href="https://wa.me/212625700603" ><img class="apps" width="40px"  src={whatsapp} alt=""/></a>
 </div >
 <button  class="download" onClick={()=>setshow1(true)} >{langue==="en"?en.cv:fr.cv}</button>
+      
         </div>
          <div class="img2">
-            <img class="reda" src={redasaad} alt=""/>
+            <img class="reda" src={code} alt=""/>
         
     </div>
-    </div>
+    </motion.div>
 {/* ======================================================================================= */}
-<div className="formation">
+<motion.div
+initial={{ opacity: 0, y: 50 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.5, delay:0,ease: "linear" }}
+viewport={{ once: true, amount: 0 }}
+className="formation">
 <div><img src={education}/></div>
-<div><h1>{langue==="en"?en.edu:fr.edu} </h1>
-<p><span className="bidaya">2025 – {langue==="en"?en.In:fr.In}</span> {langue==="en"?en.Final:fr.Final} <br/>
-<span className="tkohz">{langue==="en"?en.Fac:fr.Fac}</span><br/>
-<span className="tkohz">{langue==="en"?en.Major1:fr.Major1}</span></p>
-<p><span className="bidaya">2022 – 2023 :</span> {langue==="en"?en.Bach:fr.Bach}<br/>
-<span className="tkohz">{langue==="en"?en.fac1:fr.fac1}</span><br/>
-<span className="tkohz">{langue==="en"?en.Spe:fr.Spe}</span></p>
-<p><span className="bidaya">2020 – 2022 :</span> {langue==="en"?en.bach1:fr.bach1} <br/>
-<span className="tkohz">{langue==="en"?en.fac1:fr.fac1}</span><br/> 
-<span className="tkohz">{langue==="en"?en.spe:fr.spe}</span></p>
-<p><span className="bidaya">2018 – 2019 :</span> {langue==="en"?en.Bac:fr.Bac}</p>
+
+<div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+<h1>{langue==="en"?en.Edu:fr.Edu} </h1>
+{/* ============================================= */}
+<div id="secfor">
+    <h1 style={{color:"#5B3FE8"}}>2023 – 2026</h1>
+    <h2>{langue==="en"?en.Final:fr.Final} </h2>
+    <h3 >{langue==="en"?en.Major1:fr.Major1}</h3>
+    <p >{langue==="en"?en.Fac:fr.Fac}</p>
 
 </div>
+{/* ==================================== */}
+<div id="secfor">
+<h1 style={{color:"#3158E8"}}>2022 – 2023</h1>
+<h2>{langue==="en"?en.Bach:fr.Bach}</h2>
+<h3 >{langue==="en"?en.Spe:fr.Spe}</h3>
+<p >{langue==="en"?en.fac1:fr.fac1}</p>
+</div>
+
+{/* ==================================================== */}
+<div id="secfor">
+< h1 style={{color:"#FF9D2E"}}>2020 – 2022 :</h1>
+<h2>{langue==="en"?en.bach1:fr.bach1}</h2>
+<h3>{langue==="en"?en.spe:fr.spe}</h3>
+<p>{langue==="en"?en.fac1:fr.fac1}</p>
 
 </div>
+{/* ===================================================== */}
+<div id="secfor">
+<h1 style={{color:"#E83D8C"}}>2018 – 2019 </h1>
+<h2>{langue==="en"?en.Bac:fr.Bac}</h2>
+</div>
+</div>
+
+</motion.div>
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
