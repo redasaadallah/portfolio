@@ -37,17 +37,13 @@ function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
        const [show1,setshow1]=useState(false)
 
-    const [langue,setlangue]=useState("en")
-        const [showl,setshowl]=useState(false)
+const [langue, setlangue] = useState(() => {
+  return localStorage.getItem("LN") || "en";
+});        const [showl,setshowl]=useState(false)
          // Save to localStorage when the name changes
-     const [mounted, setMounted] = useState(false);
-                 useEffect(() => {
-                 if (mounted) {
-                     localStorage.setItem("LN", langue);
-                 } else {
-                     setMounted(true);
-                 }
-                 }, [langue]);
+                useEffect(() => {
+                localStorage.setItem("LN", langue);
+                }, [langue]);
       // Load from localStorage when the component mounts
       useEffect(() => {
         const savedName = localStorage.getItem("LN");

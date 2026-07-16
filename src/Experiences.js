@@ -16,19 +16,15 @@ function Experiences({homes,experiences,competences,certificates}){
        const [show1,setshow1]=useState(false)
 
     const [show,setshow]=useState(false)
-        const [langue,setlangue]=useState("en")
-        const [showl,setshowl]=useState(false)
+const [langue, setlangue] = useState(() => {
+  return localStorage.getItem("LN") || "en";
+});        const [showl,setshowl]=useState(false)
        const screen = window.innerWidth < 500;
        const [visible,setvisible]=useState(0)
              // Save to localStorage when the name changes
-          const [mounted, setMounted] = useState(false);
-            useEffect(() => {
-            if (mounted) {
-                localStorage.setItem("LN", langue);
-            } else {
-                setMounted(true);
-            }
-            }, [langue]);
+              useEffect(() => {
+                            localStorage.setItem("LN", langue);
+                            }, [langue]);
           // Load from localStorage when the component mounts
           useEffect(() => {
             const savedName = localStorage.getItem("LN");
@@ -357,7 +353,7 @@ MongoDB Compass.
                 {langue==="en"?en.ed9:fr.ed9}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> Java (Swing, OkHttp3), IntelliJ.
             </p>
             </div>
-        <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={sms[count]}/></div>
+        <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={sms[count]} alt="image"/></div>
     </div>
     {/* ================================ */}
    </div>
@@ -365,19 +361,19 @@ MongoDB Compass.
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
-    <img src={home}/>
+    <img src={home} alt="image"/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance}/>
+    <img src={competance} alt="image"/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
 <div onClick={experiences}>
-    <img src={manager}/>
+    <img src={manager} alt="image"/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
 <div onClick={certificates}>
-    <img src={sartaficat}/>
+    <img src={sartaficat} alt="image"/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>

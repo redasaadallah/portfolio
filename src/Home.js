@@ -19,17 +19,13 @@ import { motion } from "framer-motion";
 function Home({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
        const [show1,setshow1]=useState(false)
-        const [langue,setlangue]=useState("en")
-        const [showl,setshowl]=useState(false)
+const [langue, setlangue] = useState(() => {
+  return localStorage.getItem("LN") || "en";
+});            const [showl,setshowl]=useState(false)
         // Save to localStorage when the name changes
-  const [mounted, setMounted] = useState(false);
-              useEffect(() => {
-              if (mounted) {
-                  localStorage.setItem("LN", langue);
-              } else {
-                  setMounted(true);
-              }
-              }, [langue]);
+                useEffect(() => {
+                              localStorage.setItem("LN", langue);
+                              }, [langue]);
   // Load from localStorage when the component mounts
   useEffect(() => {
     const savedName = localStorage.getItem("LN");
@@ -109,7 +105,7 @@ whileInView={{ opacity: 1, y: 0 }}
 transition={{ duration: 0.5, delay:0,ease: "linear" }}
 viewport={{ once: true, amount: 0 }}
 className="formation">
-<div><img src={education}/></div>
+<div><img src={education} alt="image"/></div>
 
 <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
 <h1>{langue==="en"?en.Edu:fr.Edu} </h1>
@@ -148,19 +144,19 @@ className="formation">
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
-    <img src={home}/>
+    <img src={home} alt="image"/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance}/>
+    <img src={competance} alt="image"/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
 <div onClick={experiences}>
-    <img src={manager}/>
+    <img src={manager} alt="image"/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
 <div onClick={certificates}>
-    <img src={sartaficat}/>
+    <img src={sartaficat} alt="image"/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>
