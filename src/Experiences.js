@@ -13,7 +13,6 @@ import { motion } from "framer-motion";
 
 import {mylibrary,dannone,cabinet,paneau,mnist,format,traitement,hotel,sms} from "./projectdata"
 function Experiences({homes,experiences,competences,certificates}){
-       const [show1,setshow1]=useState(false)
 
     const [show,setshow]=useState(false)
 const [langue, setlangue] = useState(() => {
@@ -99,7 +98,6 @@ const [langue, setlangue] = useState(() => {
         <h1 class="me">{langue==="en"?en.titre:fr.titre}</h1> 
          <ul id="menu">
             <li onClick={homes} class="link"><button class="inlink" href="www.facebook.com"><i class="icon fa-solid fa-house"></i>{langue==="en"?en.home:fr.home}</button></li> 
-            {/* <li class="link"><button class="inlink" href="img/1.png"><i class="fa-solid fa-list-check"></i>Projects</button></li> */}
             <li onClick={competences} class="link"><button class="inlink" href="#"><i class="fa-regular fa-user"></i>{langue==="en"?en.skills:fr.skills}</button></li>
             <li onClick={experiences} class="link"><button style={{color:"aqua", borderBottom:"2px solid"}} class="inlink" href="#experience"><i class="fa-regular fa-file"></i>{langue==="en"?en.experiences:fr.experiences}</button></li>
             <li onClick={certificates} class="link"><button class="inlink" href="#"><i class="bi bi-card-list"></i>{langue==="en"?en.certificates:fr.certificates}</button></li>
@@ -108,8 +106,8 @@ const [langue, setlangue] = useState(() => {
      <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
      <div style={{display:showl?'flex':'none'}} id="menu-langue">
 
-        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
+        <button onClick={()=>{setlangue("en");setshowl(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
 
      </div>
      </div>
@@ -141,7 +139,7 @@ const [langue, setlangue] = useState(() => {
    style={{marginTop:"150px",fontSize:"clamp(2.5rem,4vw,6rem)"}} className="main">{langue==="en"?en.te1:fr.te1}</motion.h1>
    <div className="projects">
     {/* +++++++++++++++++++++++++++++++++ */}
-     <motion.div
+     <motion.div style={{display:"none"}}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay:0.3,ease: "linear" }}
@@ -323,7 +321,7 @@ MongoDB Compass.
         viewport={{ once: true, amount: 0 }}
     >
         <img src={pro}/>
-        <p>{langue==="en"?en.e8:fr.e8}  b </p>
+        <p>{langue==="en"?en.e8:fr.e8}</p>
         <button onClick={()=>{visible===8?setvisible(0):setvisible(8);setlen(9);setCount(0)}} className="download">{visible===8?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
     <div ref={div8Ref} style={{display:visible===8?"flex":"none"}}>
@@ -331,7 +329,7 @@ MongoDB Compass.
             <p>
                  
 
-{langue==="en"?en.ed8:fr.ed8}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> HTML, CSS, JavaScript, PHP, MySQL, XAMPP, vs code.
+{langue==="en"?en.ed8:fr.ed8}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> HTML, CSS, JavaScript, FastAPI, MySQL, vs code.
             </p>
         </div>
         <div><img src={hotel[count]}/></div> 

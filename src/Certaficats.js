@@ -35,7 +35,6 @@ import { motion } from "framer-motion";
 
 function Certaficats({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
-       const [show1,setshow1]=useState(false)
 
 const [langue, setlangue] = useState(() => {
   return localStorage.getItem("LN") || "en";
@@ -67,8 +66,8 @@ const [langue, setlangue] = useState(() => {
      <button onClick={()=>{showl?setshowl(false):setshowl(true)}} id="langue">{langue==="en"?"Language:":"Langue:"}{langue==="en"?"En":"Fr"} <i class="bi bi-translate"></i></button>
      <div style={{display:showl?'flex':'none'}} id="menu-langue">
 
-        <button onClick={()=>{setlangue("en");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
-        <button onClick={()=>{setlangue("fr");setshowl(false);setshow1(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
+        <button onClick={()=>{setlangue("en");setshowl(false)}} style={{width:"80%",padding:"0",height:"31%"}} className="download">{langue==="en"?"English":"Anglais"}</button>
+        <button onClick={()=>{setlangue("fr");setshowl(false)}} style={{width:"80%",padding:"0",height:"30%"}} className="download">{langue==="en"?"French":"Français"}</button>
 
      </div>
      </div>
@@ -99,8 +98,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={python}/>
-        <a href={pythonpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={python} alt=""/>
+        <a href={pythonpdf} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
      <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -108,8 +107,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.1,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
      >
-        <img className="imgg" src={phpsql}/>
-        <a href={phpsqlpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={phpsql} alt=""/>
+        <a href={phpsqlpdf} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
      <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -117,8 +116,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.2,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
      >
-        <img className="imgg" src={exel}/>
-        <a href={exelpdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={exel} alt=""/>
+        <a href={exelpdf} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
      <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -126,8 +125,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.3,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
      >
-        <img className="imgg" src={javacphp}/>
-        <a href={javacphppdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={javacphp} alt=""/>
+        <a href={javacphppdf} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -135,8 +134,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.4,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={ihssaa}/>
-        <a href={ihssaapdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={ihssaa} alt=""/>
+        <a href={ihssaapdf} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -144,8 +143,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.5,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={Ai}/>
-        <a href={aipdf} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={Ai} alt=""/>
+        <a href={aipdf} target="_blank" rel="noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -153,8 +152,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m1}/>
-        <a href={c1} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m1} alt=""/>
+        <a href={c1} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -162,8 +161,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.7,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m2}/>
-        <a href={c2} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m2} alt=""/>
+        <a href={c2} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -171,8 +170,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.8,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m3}/>
-        <a href={c3} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m3} alt=""/>
+        <a href={c3} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -180,8 +179,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.9,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m4}/>
-        <a href={c4} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m4} alt=""/>
+        <a href={c4} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -189,8 +188,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:1,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m5}/>
-        <a href={c5} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m5} alt=""/>
+        <a href={c5} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -198,8 +197,8 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:1.1,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m6}/>
-        <a href={c6} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m6} alt=""/>
+        <a href={c6} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
     <motion.div 
      initial={{ opacity: 0, y: 50 }}
@@ -207,26 +206,26 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:1.2,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m7}/>
-        <a href={c7} target="_blank" className="download">{langue==="en"?en.t:fr.t}</a>
+        <img className="imgg" src={m7} alt="github image"/>
+        <a href={c7} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
    </div>
 
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
-    <img src={home}/>
+    <img src={home} alt=""/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance}/>
+    <img src={competance} alt=""/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
-<div onClick={experiences}>
+<div onClick={experiences} alt="">
     <img src={manager}/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
-<div onClick={certificates}>
+<div onClick={certificates} alt="">
     <img src={sartaficat}/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>

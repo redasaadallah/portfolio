@@ -163,8 +163,8 @@ className="formation">
 {/* ======================================================================================= */}
 {show1 &&<>
 <div className="cv">
-    <a href={cv1} target="_blank" style={{ animationDuration: "0s" }} className="download">{langue==="en"?en.ve1:fr.ve1}</a>
-        <a href={cv2} target="_blank" style={{ animationDuration: "0s" }} className="download">{langue==="en"?en.ve2:fr.ve2}</a>
+    <a href={cv1} target="_blank" rel="noopener noreferrer" style={{ animationDuration: "0s" }} className="download">{langue==="en"?en.ve1:fr.ve1}</a>
+        <a href={cv2} target="_blank" rel="noopener noreferrer" style={{ animationDuration: "0s" }} className="download">{langue==="en"?en.ve2:fr.ve2}</a>
 </div>
 <div onClick={()=>setshow1(false)} className="cvcover"></div></>}
     </>);
