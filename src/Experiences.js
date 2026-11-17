@@ -145,7 +145,7 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:0.3,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
      >
-        <img src={fst}/>
+        <img src={fst} alt="FST"/>
         <p>{langue==="en"?en.e1:fr.e1}</p>
         <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===10?setvisible(0):setvisible(10);setlen(11);setCount(0)}} className="download">{visible===10?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -156,7 +156,7 @@ const [langue, setlangue] = useState(() => {
 IDEA, XAMPP, Node.js. 
             </p>
         </div>
-        <div><img src={mylibrary[count]}/></div>
+        <div><img src={mylibrary[count]} alt="Library project screenshot"/></div>
     </div>
     {/* ++++++++++++++++++++++++++++++++ */}
     <motion.div
@@ -165,7 +165,7 @@ IDEA, XAMPP, Node.js.
         transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={fst}/>
+        <img src={fst} alt="FST"/>
         <p>{langue==="en"?en.e1:fr.e1}</p>
         <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===1?setvisible(0):setvisible(1);setlen(11);setCount(0)}} className="download">{visible===1?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -176,7 +176,7 @@ IDEA, XAMPP, Node.js.
 IDEA, XAMPP, Node.js. 
             </p>
         </div>
-        <div><img src={mylibrary[count]}/></div>
+        <div><img src={mylibrary[count]} alt="Library project screenshot"/></div>
     </div>
     {/* ++++++++++++++++++++++++++++++++ */}
     <motion.div
@@ -185,7 +185,7 @@ IDEA, XAMPP, Node.js.
         transition={{ duration: 0.5, delay:0.9,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={danone}/>
+        <img src={danone} alt="Danone"/>
         <p>{langue==="en"?en.e2:fr.e2}</p>
         <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===2?setvisible(0):setvisible(2);setlen(10);setCount(0)}} className="download">{visible===2?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -196,7 +196,7 @@ IDEA, XAMPP, Node.js.
 IntelliJ IDEA, XAMPP, Node.js. 
             </p>
             </div>
-            <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={dannone[count]}/></div>
+            <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={dannone[count]} alt="Danone app screenshot"/></div>
     </div>
     {/* +++++++++++++++++++++ */}
     <motion.div
@@ -205,7 +205,7 @@ IntelliJ IDEA, XAMPP, Node.js.
         transition={{ duration: 0.5, delay:1,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={dentiste}/>
+        <img src={dentiste} alt="Dental clinic"/>
         <p>{langue==="en"?en.e3:fr.e3}</p>
         <button style={{fontSize:"clamp(0.7rem,0.7vw,2rem)"}} onClick={()=>{visible===3?setvisible(0):setvisible(3);setlen(16);setCount(0)}} className="download">{visible===3?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -218,7 +218,7 @@ IntelliJ IDEA, XAMPP, Node.js.
 MongoDB Compass.
             </p>
             </div>
-        <div className="mobile"  style={{width:screen?"80%":"20%",height:"500px"}}><img src={cabinet[count]}/></div>
+        <div className="mobile"  style={{width:screen?"80%":"20%",height:"500px"}}><img src={cabinet[count]} alt="Dental app screenshot"/></div>
     </div>
     
     </div>
@@ -237,7 +237,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:0.2,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e4:fr.e4}</p>
         <button onClick={()=>{visible===4?setvisible(0):setvisible(4);setlen(14);setCount(0)}} className="download">{visible===4?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -249,7 +249,7 @@ MongoDB Compass.
 <br/><br/><u>{langue==="en"?en.en:fr.en}</u> Python (OpenCV, NumPy, Threading, KivyMD, Socket, TensorFlow, Keras, Pandas), vs code, Raspberry Pi 4. 
             </p>
             </div>
-        <div style={{width:screen?"80%":"20%",height:"500px"}}><img src={paneau[count]}/></div>
+        <div style={{width:screen?"80%":"20%",height:"500px"}}><img src={paneau[count]} alt="Panel project screenshot"/></div>
     </div>
     {/* ============================= */}
     <motion.div
@@ -258,7 +258,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:0.4,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e5:fr.e5}  </p>
         <button onClick={()=>{visible===5?setvisible(0):setvisible(5);setlen(7);setCount(0)}} className="download">{visible===5?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -270,7 +270,7 @@ MongoDB Compass.
  
             </p>
         </div>
-        <div><img src={mnist[count]}/></div> 
+        <div><img src={mnist[count]} alt="MNIST project screenshot"/></div> 
     </div>
     {/* ========================== */}
     <motion.div
@@ -279,7 +279,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:0.6,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e6:fr.e6}  </p>
         <button onClick={()=>{visible===6?setvisible(0):setvisible(6);setlen(5);setCount(0)}} className="download">{visible===6?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -292,7 +292,7 @@ MongoDB Compass.
 <br/><br/><u>{langue==="en"?en.en:fr.en}</u> Python (Tkinter, NumPy, Pydub, algorithmes de compression Huffman et RLE), Jupyter Notebook.
             </p>
             </div>
-        <div style={{width:screen?"":"30%",height:"300px"}}><img src={format[count]}/></div>
+        <div style={{width:screen?"":"30%",height:"300px"}}><img src={format[count]} alt="Format project screenshot"/></div>
     </div>
     {/* ================================ */}
     <motion.div
@@ -301,7 +301,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:0.8,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e7:fr.e7}   </p>
         <button onClick={()=>{visible===7?setvisible(0):setvisible(7);setlen(5);setCount(0)}} className="download">{visible===7?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -311,7 +311,7 @@ MongoDB Compass.
                 {langue==="en"?en.ed7:fr.ed7}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> MATLAB.
             </p>
         </div>
-        <div><img src={traitement[count]}/></div> 
+        <div><img src={traitement[count]} alt="MATLAB processing screenshot"/></div> 
     </div>
     {/* ================================== */}
     <motion.div
@@ -320,7 +320,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:1,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e8:fr.e8}</p>
         <button onClick={()=>{visible===8?setvisible(0):setvisible(8);setlen(9);setCount(0)}} className="download">{visible===8?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -332,7 +332,7 @@ MongoDB Compass.
 {langue==="en"?en.ed8:fr.ed8}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> HTML, CSS, JavaScript, FastAPI, MySQL, vs code.
             </p>
         </div>
-        <div><img src={hotel[count]}/></div> 
+        <div><img src={hotel[count]} alt="Hotel project screenshot"/></div> 
     </div>
     {/* =========================== */}
     <motion.div
@@ -341,7 +341,7 @@ MongoDB Compass.
         transition={{ duration: 0.5, delay:1.2,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img src={pro}/>
+        <img src={pro} alt="Project"/>
         <p>{langue==="en"?en.e9:fr.e9}</p>
         <button onClick={()=>{visible===9?setvisible(0):setvisible(9);setlen(2);setCount(0)}} className="download">{visible===9?langue==="en"?en.m:fr.m:langue==="en"?en.a:fr.a}</button>
     </motion.div>
@@ -351,7 +351,7 @@ MongoDB Compass.
                 {langue==="en"?en.ed9:fr.ed9}<br/><br/><u>{langue==="en"?en.en:fr.en}</u> Java (Swing, OkHttp3), IntelliJ.
             </p>
             </div>
-        <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={sms[count]} alt="image"/></div>
+        <div className="mobile" style={{width:screen?"80%":"20%",height:"500px"}}><img src={sms[count]} alt="SMS app screenshot"/></div>
     </div>
     {/* ================================ */}
    </div>
@@ -359,19 +359,19 @@ MongoDB Compass.
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
-    <img src={home} alt="image"/>
+    <img src={home} alt=""/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance} alt="image"/>
+    <img src={competance} alt=""/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
 <div onClick={experiences}>
-    <img src={manager} alt="image"/>
+    <img src={manager} alt=""/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
 <div onClick={certificates}>
-    <img src={sartaficat} alt="image"/>
+    <img src={sartaficat} alt=""/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>

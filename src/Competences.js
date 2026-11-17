@@ -10,7 +10,7 @@ import {langage,framework,conception,bureatique,base,IDE,carte,ops} from "./data
 
 function Competences({homes,experiences,competences,certificates}){
     const [show,setshow]=useState(false)
-       const [show1,setshow1]=useState(false)
+       const [,setshow1]=useState(false)
     
 const [langue, setlangue] = useState(() => {
   return localStorage.getItem("LN") || "en";
@@ -28,18 +28,6 @@ const [langue, setlangue] = useState(() => {
 
             }
           }, []);
-    //=============================motion==========================
-    const variant={
-        hidden:{
-            opacity:0,
-        },
-        visible:{
-            opacity:1,
-            transition:{
-                duration:0.5
-            }
-        }
-    }  
     function getRandomPrettyColor() {
   const hue = Math.floor(Math.random() * 360);
   const saturation = 65 + Math.floor(Math.random() * 16); // 65% à 80%
@@ -255,19 +243,19 @@ const [langue, setlangue] = useState(() => {
    {/* ======================================================================= */}
    <div className="menudown">
 <div onClick={homes}>
-    <img src={home}/>
+    <img src={home} alt=""/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance}/>
+    <img src={competance} alt=""/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
 <div onClick={experiences}>
-    <img src={manager}/>
+    <img src={manager} alt=""/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
 <div onClick={certificates}>
-    <img src={sartaficat}/>
+    <img src={sartaficat} alt=""/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>

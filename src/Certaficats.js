@@ -206,7 +206,7 @@ const [langue, setlangue] = useState(() => {
         transition={{ duration: 0.5, delay:1.2,ease: "linear" }}
         viewport={{ once: true, amount: 0 }}
     >
-        <img className="imgg" src={m7} alt="github image"/>
+        <img className="imgg" src={m7} alt="GitHub certificate"/>
         <a href={c7} target="_blank" rel="noopener noreferrer" className="download">{langue==="en"?en.t:fr.t}</a>
     </motion.div>
    </div>
@@ -221,12 +221,12 @@ const [langue, setlangue] = useState(() => {
     <img src={competance} alt=""/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
-<div onClick={experiences} alt="">
-    <img src={manager}/>
+<div onClick={experiences}>
+    <img src={manager} alt=""/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
-<div onClick={certificates} alt="">
-    <img src={sartaficat}/>
+<div onClick={certificates}>
+    <img src={sartaficat} alt=""/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>

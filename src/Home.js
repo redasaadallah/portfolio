@@ -105,7 +105,7 @@ whileInView={{ opacity: 1, y: 0 }}
 transition={{ duration: 0.5, delay:0,ease: "linear" }}
 viewport={{ once: true, amount: 0 }}
 className="formation">
-<div><img src={education} alt="image"/></div>
+<div><img src={education} alt="Education"/></div>
 
 <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
 <h1>{langue==="en"?en.Edu:fr.Edu} </h1>
@@ -144,19 +144,19 @@ className="formation">
 {/* ======================================================================================== */}
 <div className="menudown">
 <div onClick={homes}>
-    <img src={home} alt="image"/>
+    <img src={home} alt=""/>
     <h1>{langue==="en"?en.home:fr.home}</h1>
 </div>
 <div onClick={competences}>
-    <img src={competance} alt="image"/>
+    <img src={competance} alt=""/>
     <h1>{langue==="en"?en.skills:fr.skills}</h1>
 </div>
 <div onClick={experiences}>
-    <img src={manager} alt="image"/>
+    <img src={manager} alt=""/>
     <h1>{langue==="en"?en.experiences:fr.experiences}</h1>
 </div>
 <div onClick={certificates}>
-    <img src={sartaficat} alt="image"/>
+    <img src={sartaficat} alt=""/>
     <h1>{langue==="en"?en.certificates:fr.certificates}</h1>
 </div>
 </div>
